@@ -24,10 +24,10 @@
           "link": "{{ '/items/' | append: item.objectid | append: '.html' | relative_url }}"
         },
         "start_date": { 
-          {% if item.date contains '-' %}{% assign dates = item.date | strip | split: '-' %}
+          {% if item.timeline contains '-' %}{% assign dates = item.timeline | strip | split: '-' %}
           "month": "{{ dates[1] }}",
           "day": "{{ dates[2] }}",
-          "year": "{{ dates[0] }}"{% elsif item.date contains '/' %}"year": "{{ item.date | strip | split: '/' | last }}"{% else %}
+          "year": "{{ dates[0] }}"{% elsif item.timeline contains '/' %}"year": "{{ item.date | strip | split: '/' | last }}"{% else %}
           "year": "{{ item.date }}"{% endif %}
         },
         "text": {
